@@ -1,2 +1,2 @@
 # Sinikiwe
-Sinikiwe is a photographer and this is there portfolio
+Sinikiwe is a photographer and this is their portfolio
