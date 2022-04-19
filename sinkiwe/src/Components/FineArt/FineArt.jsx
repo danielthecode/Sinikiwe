@@ -2,7 +2,7 @@ import React from 'react'
 
 function FineArt() {
   return (
-    <div>FineArt</div>
+    <div>Fine Art</div>
   )
 }
 
