@@ -1,0 +1,253 @@
+
+    .header {
+        position: fixed;
+        width: calc(100%);
+        display: flex;
+        transition: 1s all ease;
+        top: 0;
+        left: 0;
+        z-index: 1;
+    
+        a{ 
+            text-decoration: none;
+            color: black;
+        }
+    
+        .container {
+            width: 100%;
+            height: 100vh;
+            padding: auto 22px;
+            display: flex;
+            flex: 1;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            font-size: clamp(2rem, 3vw, 10vw);
+            background-color: unset;
+            
+    
+            .nav{
+                height: 100%;
+                width: 100%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                transition: 1s all ease;
+                position: relative;
+
+                &.close {
+                    .logo{
+                        display: none;
+                    }
+
+                    .ul-items {
+                        display: none;
+                    }
+
+                    .contact {
+                        display: none;
+                    }
+
+                }
+
+                &.open {
+                    background-color: white;
+
+                    .logo{
+                        display: initial;
+                    }
+
+                    .ul-items {
+                        display:flex;
+                    }
+
+                    .contact {
+                        display: flex;
+                    }
+                }
+                
+    
+                .logo {
+                    position: absolute;
+                    transform-origin: top left;
+                    font-size: clamp(7rem, 10vw, 14vw);
+                    transform: rotate(-90deg) translateX(-50%);
+                    left: -4.4%;
+                    top: 50%;
+                    font-weight: 500;
+                    background-color: rgb(255, 255, 255, 0.25);
+                    opacity: 1;
+                    text-align: right;
+                    
+                    a {
+                        text-decoration: none;
+                    }
+
+                    .sub-heading {
+                        padding: 0;
+                        margin-top: -50px;
+                        font-family: 'Raleway', sans-serif;
+                        font-size: clamp(2rem, 2vw, 8vw);
+                    }
+    
+                }
+    
+    
+                .ul-items {
+                    height: 100%;
+                    margin-left: 164px;
+                    padding-right: 21px;
+                    padding: 0;
+                    display: flex;
+                    flex-direction: column;
+                    list-style: none;
+                    justify-content: center;
+                    transition: 1s all ease;
+                    font-family: 'Raleway', sans-serif;
+                    font-weight: 400;
+                    overflow: hidden;
+                    text-align: right;
+                    
+
+                   
+                    
+    
+                    
+                    li {
+                        margin-bottom: 61px;
+                    }
+    
+                    .nav-socials {
+                       display: none;
+                        
+                    }
+                  
+                }
+
+                .collapse {
+                    position: absolute;
+                    right: 3%;
+                    left: 80%;
+                    top: 33px;
+                    transition: 1s all ease;
+        
+        
+                    img {
+                        height: 50px;
+                        width: 50px;
+                        cursor: pointer;
+                        -webkit-tap-highlight-color:  rgba(255, 255, 255, 0); 
+                    }
+                }
+
+                .contact {
+                    position: absolute;
+                    width: 100%;
+                    display: flex;
+                    flex-direction: row;
+                    justify-content: center;
+                    align-items: center;
+                    bottom: 5%;
+                    padding: auto 10px;
+                    text-align: center;
+                    transition: 1s all ease;
+                    font-size: clamp(1rem, 3vw, 6vw);
+
+                    .socials {
+                        margin: auto 30px;
+                        display: flex;
+                        flex-direction: row;
+                        transition: 1s all ease;
+                        align-items: center;
+                        justify-content: center;
+
+                        .icon {
+                            
+                            &:first-child {
+                                margin-right: 8px;
+                            }
+
+                            a{
+                                svg {
+                                    height: clamp(1.25rem, 4vw, 2rem);
+                                    width: clamp(1.25rem, 4vw, 2rem);
+                                }
+                            }
+
+                        }
+                    }
+                }
+            }
+
+            
+            
+        }
+    
+    }
+
+
+
+@media only screen and (min-width : 768px) {
+
+    .header {
+        .container {
+            .nav {
+                .logo {
+                    left: -2.4%;
+                }
+                .ul-items {
+                    height: 100vh;
+                    margin-left: 0;
+                    padding-right: 0;
+                    text-align: center;
+
+                }
+
+                .collapse {
+                    right: 8%;
+                    left: 90%;
+        
+                    img {
+                        height: 60px;
+                        width: 60px;
+                    }
+                }
+            }
+
+        }
+
+    }
+
+
+}
+
+@media only screen and (min-width : 1024px) {
+
+    .header {
+        .container {
+            .nav {
+                .logo {
+                    left: 2%;
+                }
+                .ul-items {
+                    height: 100vh;
+                    margin-left: 0;
+                    padding-right: 0;
+                    text-align: center;
+
+                }
+
+                .collapse {
+                    right: 120px;
+                    left: 90%;
+        
+                }
+            }
+
+        }
+
+    }
+
+
+}
+
