@@ -36,16 +36,16 @@ function Header() {
 
           <ul className='ul-items'>
             <li>
-            <Link to="/portraiture">Portraiture</Link>
+            <Link to="/portraiture" onClick={close}>Portraiture</Link>
             </li>
             <li>
-            <Link to="/nature">Nature</Link>
+            <Link to="/nature" onClick={close}>Nature</Link>
             </li>
             <li>
-            <Link to="/weddings">Wedding</Link>
+            <Link to="/weddings" onClick={close}>Wedding</Link>
             </li>
             <li>
-            <Link to="/fineart">Fine Art</Link>
+            <Link to="/fineart" onClick={close}>Fine Art</Link>
             </li>
           </ul>
           
