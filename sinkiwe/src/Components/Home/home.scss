@@ -67,7 +67,7 @@
     .container {
     
         .heading {
-            left: 2%;
+            left: 6.7%;
         }
     
         .hero-image {
@@ -76,6 +76,53 @@
     }
 
 
+}
+
+@media only screen and (min-width : 1201px) {
+
+    .container {
+    
+        .hero-image {
+            margin-left: 170px;
+        }
+    }
+}
+
+@media only screen and (min-width : 1401px) {
+
+    .container {
+
+        .heading {
+            left: 4%;
+        }
+    
+        .hero-image {
+            margin-left: 170px;
+        }
+    }
+}
+
+@media only screen and (min-width : 1901px) {
+
+    .container {
+    
+        .hero-image {
+            margin-left: 230px;
+        }
+    }
+}
+
+@media (min-width: 2200px) {
+    .container {
+
+        .heading {
+            left:5%;
+        }
+    
+        .hero-image {
+            margin-left: 290px;
+        }
+    }
 }
 
 
