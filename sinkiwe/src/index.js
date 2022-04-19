@@ -1,11 +1,14 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
+import {createRoot} from 'react-dom/client';
 import App from './App';
 import {BrowserRouter as Router, Routes, Route} from 'react-router-dom';
 import Header from './Components/Header/Header';
 
 
-ReactDOM.render(
+const rootElement = document.getElementById("root");
+const root = createRoot(rootElement);
+
+root.render(
   <Router>
     <Header/>
     <Routes>
@@ -14,6 +17,5 @@ ReactDOM.render(
       <Route path="/header" element={<Header/>}/>
     </Routes>
     {/* <Footer/> */}
-  </Router>,
-  document.getElementById('root')
+  </Router>
 );
