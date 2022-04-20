@@ -5,7 +5,8 @@ import Image from "../../Images/Hero_image.png";
 
 function Home() {
   return (
-    <div className='container'>
+    <div className="home">
+      <div className='container'>
             <div className='hero-image'><img src={Image} className="img" alt="" /></div>
             <div className="heading">
               SINIKIWE
@@ -13,6 +14,8 @@ function Home() {
             </div>
             
     </div>
+    </div>
+    
     
   )
 }
