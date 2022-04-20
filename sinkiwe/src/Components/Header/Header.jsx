@@ -24,7 +24,7 @@ function Header() {
 
   return (
     <>
-    <div className="header">
+    <div className={menuOpen ? 'header open' : 'header close'}>
       <div className="container">
         <nav className={menuOpen ? 'nav open' : 'nav close'}>
           <div className="logo">
