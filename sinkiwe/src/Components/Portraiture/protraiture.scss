@@ -1,0 +1,191 @@
+.portraiture {
+    .container{
+
+        min-height: 100vh;
+        width: 100%;
+        margin-top: 100px;
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        overflow-y: auto;
+        background-color: white;
+        transition: all 1s ease-in-out;     
+
+        .heading {
+            position: relative;
+            margin:0 5px;
+            font-size: clamp(5rem, 10vw, 14vw);
+            color: white;
+            mix-blend-mode: difference;
+        }
+
+        .scroll {
+            position: absolute;
+            bottom: 10%;
+            left: 18%;
+            font-size: clamp(2rem, 4rem, 8rem);
+            line-height: 1;
+            display: none;
+            color: white;
+            mix-blend-mode: difference;
+            
+
+        }
+
+        .image-wrapper {
+            height: 100%;
+            width: 100%;
+
+           div {
+            .image-container {
+
+                height: 660px;
+                width: 100%;
+
+                .img {
+                    height: 660px;
+                    width: 100%;
+                    object-fit: cover;
+                    object-position: top center;
+                }
+            }
+           } 
+        }
+    }
+}
+
+
+@media only screen and (min-width : 768px) {
+    .portraiture {
+        .container{
+    
+            height: 100vh;
+            margin-top: 0;
+            display: flex;
+            background-color: white;
+            
+    
+            .heading {
+                position: absolute;
+                transform-origin: top left;
+                font-size: clamp(5rem, 8rem, 12rem);
+                transform: rotate(-90deg) translateX(-50%);
+                left: 0;
+                top: 50%;
+                font-weight: 500;
+                text-align: right;
+                margin:0;
+                z-index: 4;
+                text-transform: uppercase;
+                background-color: white;
+                mix-blend-mode: difference;
+        
+                .text {
+                    background-color: white;
+                    color: black;
+                    mix-blend-mode: difference;
+                    width: 100vh;
+                    line-height: 1;
+                }
+            }
+
+            .scroll {
+                display: initial;
+                
+
+            }
+    
+            .image-wrapper {
+                height: 100vh;
+                width: 100vw;
+                z-index: 3;
+                display: flex;
+    
+                :not(:first-child){
+                    margin: 0;
+                }
+
+                &>:first-child {
+                    margin-left: 500px;
+                }
+               
+
+                div {
+                    display: flex;
+                    height: 100vh;
+
+                    :not(:first-child){
+                        margin: 0 0;
+                    }
+
+                    
+                    
+                    :last-child {
+                        margin-right: 50px;
+                    }
+                    .image-container {
+                        height: unset;
+                        width: unset;
+                        pointer-events: none;
+                        &:last-child {
+                            margin-right: 10.7rem;
+                        }
+                        .img {
+                        width: auto ;
+                        height: 100vh;
+                        margin: 0;
+                        margin-right: 2rem;
+                        pointer-events: all;
+
+                        
+                        
+                        cursor: pointer;
+
+                }
+                }
+                }
+    
+                
+            }
+        }
+    }
+}
+
+
+
+
+
+
+ @media only screen and (min-width : 1024px) {
+    .portraiture {
+        .container{
+            .heading {
+                font-size: 5.8rem;
+                left: 0;
+            }
+    
+            .image-wrapper {
+                &>:first-child {
+                    margin-left: 0;
+                }
+                div {
+
+                    &>:first-child {
+                        margin-left: 400px;
+                    }
+
+                    .image-container {
+                        &:last-child {
+                            margin-right: 23.7rem;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+
