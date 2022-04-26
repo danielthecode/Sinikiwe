@@ -1,13 +1,21 @@
-import React, {useState} from 'react';
+import React, {useState, useEffect} from 'react';
 import "./header.scss";
 import { Link } from 'react-router-dom';
 import { FaFacebook, FaInstagram } from 'react-icons/fa';
 import hamburger_open from "../../Images/open.svg";
 import hamburger_close from "../../Images/hamburger_icon_close.svg";
 
+import AOS from "aos";
+import "aos/dist/aos.css";
+
 
 function Header() {
 
+
+  useEffect(() => {
+    AOS.init();
+    AOS.refresh();
+  }, []);
   const [menuOpen, setMenuOpen] = useState(false)
   const menuToggleHandler = () => {
     setMenuOpen((p) => !p)
@@ -26,9 +34,9 @@ function Header() {
     <>
     <div className={menuOpen ? 'header open' : 'header close'}>
       <div className="container">
-        <nav className={menuOpen ? 'nav open' : 'nav close'}>
+        <nav className={menuOpen ? 'nav open' : 'nav close'}  >
           <div className="logo">
-            <Link to="/home" onClick={close}>
+            <Link to="/" onClick={close}>
               SINIKIWE
               <div className="sub-heading">photographer</div>
             </Link>
@@ -61,7 +69,7 @@ function Header() {
           </div>
         </div>
 
-        <div className="collapse">
+        <div className="collapse" data-aos="fade-left" data-aos-easing="linear" data-aos-duration="1000" data-aos-delay="500">
             {menuOpen ? <img src={hamburger_close} alt="open menu" onClick={menuToggleHandler} /> :
             <img src={hamburger_open} alt="close menu" onClick={menuToggleHandler} />}
           </div>
