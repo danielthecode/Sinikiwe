@@ -58,7 +58,8 @@ function Header() {
           </ul>
           
           <div className="contact">
-          <div className="email">ashleemlambo@gmail.com</div>
+          <div className="email">
+          <a href="mailto:contact@carkeyexperts.co.uk">ashleemlambo@gmail.com</a></div>
           <div className="socials">
             <div className="icon">
              <a href="https://www.instagram.com/ashleemlambo/" target="_blank" rel="noreferrer"><FaInstagram size={30}/></a>
