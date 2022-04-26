@@ -4,6 +4,7 @@
         min-height: 100vh;
         width: 100%;
         margin-top: 100px;
+        padding-bottom: 5rem;
         position: relative;
         display: flex;
         flex-direction: column;
@@ -16,7 +17,7 @@
         .heading {
             position: relative;
             margin:0 5px;
-            font-size: clamp(5rem, 10vw, 14vw);
+            font-size: clamp(3rem, 8vw, 8vw);
             color: white;
             mix-blend-mode: difference;
         }
@@ -38,12 +39,11 @@
             height: 100%;
             width: 100%;
 
-           div {
             .image-container {
-
+                margin-top: 1rem;
                 height: 660px;
                 width: 100%;
-
+                padding-bottom: 0;
                 .img {
                     height: 660px;
                     width: 100%;
@@ -51,7 +51,6 @@
                     object-position: top center;
                 }
             }
-           } 
         }
     }
 }
@@ -65,6 +64,7 @@
             margin-top: 0;
             display: flex;
             background-color: white;
+            padding-bottom: 0;
             
     
             .heading {
@@ -102,36 +102,24 @@
                 width: 100vw;
                 z-index: 3;
                 display: flex;
-    
-                :not(:first-child){
-                    margin: 0;
-                }
 
-                &>:first-child {
-                    margin-left: 500px;
+                .image-container {
+                    margin-top: 0;
                 }
-               
+                
 
                 div {
                     display: flex;
                     height: 100vh;
 
-                    :not(:first-child){
-                        margin: 0 0;
-                    }
-
+                    div {&>:first-child {
+                        margin-left: 400px;
+                    }}
                     
-                    
-                    :last-child {
-                        margin-right: 50px;
-                    }
                     .image-container {
                         height: unset;
                         width: unset;
                         pointer-events: none;
-                        &:last-child {
-                            margin-right: 10.7rem;
-                        }
                         .img {
                         width: auto ;
                         height: 100vh;
@@ -167,19 +155,14 @@
             }
     
             .image-wrapper {
-                &>:first-child {
-                    margin-left: 0;
-                }
                 div {
 
-                    &>:first-child {
-                        margin-left: 400px;
-                    }
+                    
 
-                    .image-container {
-                        &:last-child {
-                            margin-right: 23.7rem;
-                        }
+                    div{
+                        &>:first-child {
+                        margin-left: 900px;
+                    }
                     }
                 }
             }
