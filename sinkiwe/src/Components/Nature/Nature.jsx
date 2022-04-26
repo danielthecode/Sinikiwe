@@ -1,4 +1,3 @@
-/* eslint-disable no-unused-vars */
 import React, {useState, useEffect} from 'react'
 import "./nature.scss"
 import HorizontalScroll from 'react-scroll-horizontal'
@@ -32,7 +31,7 @@ function Nature() {
 
     const getPortraiture = async() => {
         
-        const data = await ImageService.getAllImages(query(collection(db, "nature"),orderBy("timeStamp", "desc")), (snapshot) => {
+        await ImageService.getAllImages(query(collection(db, "nature"),orderBy("timeStamp", "desc")), (snapshot) => {
             let imagesList = []
             snapshot.docs.forEach((doc) => {
                 imagesList.push({...doc.data(), id: doc.id})
