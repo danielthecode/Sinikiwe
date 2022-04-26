@@ -1,10 +1,11 @@
+/* eslint-disable no-unused-vars */
 import React, {useState, useEffect} from 'react'
 import "./protraiture.scss"
 import HorizontalScroll from 'react-scroll-horizontal'
 import { BrowserView, MobileView } from 'react-device-detect';
 import { SRLWrapper } from "simple-react-lightbox";
 import ImageService from "../../utils/ImageService"
-import {  db, storage } from '../../firebase'
+import {  db } from '../../firebase'
 import { collection, query, orderBy } from "firebase/firestore";
 import AOS from "aos";
 import "aos/dist/aos.css";
