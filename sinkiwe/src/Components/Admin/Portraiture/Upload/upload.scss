@@ -1,0 +1,182 @@
+.upload-container {
+    padding-top: 10rem;
+    min-height: 100vh;
+    padding-bottom: 5rem;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    overflow-x: hidden;
+
+    
+    .title {
+        margin-bottom: 2rem;
+        text-align: center;
+        font-size: 2rem;
+    }
+
+    .upload__image-wrapper {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        min-width: 500px;
+        .progress {
+            .CircularProgressbar {
+                width: 120px;
+            }
+        }
+    }
+
+        .controls {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            text-align: center;
+            font-size: 1rem;
+
+            div {
+                margin:5px 0;
+            }
+
+            svg {
+                font-size: 15px;
+            }
+
+            .select-button {
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                cursor: pointer;
+                color: cornflowerblue;
+            
+            }
+
+            .remove-button {
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                cursor: pointer;
+                color: crimson;
+             }
+
+            .upload-button {
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                cursor: pointer;
+                color: forestgreen;
+             }
+        }
+
+        .image-container {
+            overflow-x: hidden;
+            margin: 0;
+            padding: 1rem 0;
+
+            .image-item {
+            margin: 0 2rem;
+            padding: 0 1rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+
+            img {
+                height: 220px;
+                width: auto;
+
+            }
+
+            .update-btn {
+                    background: cornflowerblue;
+	                color: white;
+	                border: none;
+                    border-radius: 5px;
+	                padding: 5px;
+                    margin-top: 10px;
+	                font: inherit;
+	                cursor: pointer;
+	                outline: inherit;
+                    margin-right: 10px;
+            }
+            .remove-btn {
+                    background-color: crimson;
+	                color: white;
+	                border: none;
+                    border-radius: 5px;
+	                padding: 5px;
+                    margin-top: 10px;
+	                font: inherit;
+	                cursor: pointer;
+	                outline: inherit;
+                    margin-left: 10px;
+            }
+
+
+            }
+
+        }
+
+        
+}
+
+@media only screen and (min-width : 768px) {
+    .upload-container {
+    
+        .image-container {
+
+                .image-item {
+        
+                    img {
+                        height: 400px;
+        
+                    }
+                }
+    
+            }
+    
+            
+    }
+}
+
+@media only screen and (min-width : 962px) {
+    .upload-container {
+    
+        .title {
+            font-size: 3rem;
+        }
+
+        .controls {
+            flex-direction: row;
+
+            div {
+                margin:5px 8px;
+            }
+
+            svg {
+                font-size: 30px;
+            }
+        }
+    
+            .image-container {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+
+                .image-item {
+        
+                    img {
+                        height: 300px;
+        
+                    }
+                }
+    
+            }
+    
+            
+    }
+}
