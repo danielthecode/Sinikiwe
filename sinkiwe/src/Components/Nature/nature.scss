@@ -4,6 +4,7 @@
         min-height: 100vh;
         width: 100%;
         margin-top: 100px;
+        padding-bottom: 5rem;
         position: relative;
         display: flex;
         flex-direction: column;
@@ -43,6 +44,8 @@
 
                 height: 660px;
                 width: 100%;
+                padding-bottom: 0;
+                margin-top: 1rem;
 
                 .img {
                     height: 660px;
@@ -66,6 +69,7 @@
             display: flex;
             background-color: white;
             overflow-y: hidden;
+            padding-bottom: 0;
             
     
             .heading {
@@ -103,11 +107,6 @@
                 width: 100vw;
                 overflow-y: hidden;
                 z-index: 3;
-    
-                :not(:first-child){
-                    margin: 0;
-                }
-
                 
                
 
@@ -115,28 +114,27 @@
                     display: flex;
                     height: 100vh;
                     overflow-y: hidden;
+                    margin: 0 0;
 
                     :not(:first-child){
                         margin: 0 0;
                     }
-
-                    &>:first-child {
-                        margin-left: 500px;
-                    }
                     
-                    :last-child {
-                        margin-right: 50px;
+
+                    div{
+                        &>:first-child {
+                        margin-left: 200px;
+                        margin: 0 0;
+                    }
                     }
                     .image-container {
                         height: unset;
                         width: unset;
-                        &:last-child {
-                            margin-right: 10.7rem;
-                        }
                         .img {
                         width: auto ;
                         height: 100vh;
                         margin: 0;
+                        margin-top: 0;
                         margin-right: 2rem;
 
                         
@@ -169,14 +167,10 @@
             .image-wrapper {
                 div {
 
-                    &>:first-child {
-                        margin-left: 300px;
-                    }
-
-                    .image-container {
-                        &:last-child {
-                            margin-right: 14.4rem;
-                        }
+                    div{
+                       &>:first-child {
+                        margin-left: 450px;
+                    } 
                     }
                 }
             }
