@@ -8,6 +8,7 @@ import {  db } from '../../firebase'
 import { collection, query, orderBy } from "firebase/firestore";
 import AOS from "aos";
 import "aos/dist/aos.css";
+import Loader from "../Loader"
 
 
 const options = {
@@ -19,6 +20,7 @@ const options = {
 function Potraiture(props) {
 
     const [images, setImages] = useState([])
+    const [isLoading, setLoading] = useState(true)
 
     useEffect(() => {
         getPortraiture();
@@ -37,7 +39,7 @@ function Potraiture(props) {
                 imagesList.push({...doc.data(), id: doc.id})
                 setImages(imagesList)
             })
-            console.log(imagesList);
+            setTimeout(() => setLoading(false), 4000)
         })
         
     }
@@ -52,9 +54,9 @@ function Potraiture(props) {
                 <div className="heading"><div className="text" data-aos="fade-down"  data-aos-easing="linear">Portraiture</div></div>
                 <div className="scroll">scroll →</div>
                 <div className="image-wrapper">
-                {images.map((doc, id) => {
+                {isLoading ? <Loader/> : images.map((doc, id) => {
                     return (
-                      <div className="image-container" data-aos="fade-down" data-aos-easing="linear" data-aos-duration="1000" key={doc.id}>
+                      <div className="image-container" data-aos="fade-left" data-aos-easing="linear" data-aos-duration="1000" key={doc.id}>
                         <img src={doc.imageURL} className="img" alt="" />
                     </div>  
                     )
@@ -71,7 +73,7 @@ function Potraiture(props) {
         <div className="scroll" data-aos="fade-right" data-aos-easing="linear" data-aos-duration="1000"  data-aos-delay="500">scroll →</div>
         <div className="image-wrapper">
 
-             <HorizontalScroll config={{ stiffness: 137, damping: 14 }} pageLock={true} reverseScroll={true} style={{height: "100%", width: "100%"}}>
+        {isLoading ? <Loader/> : <HorizontalScroll config={{ stiffness: 137, damping: 14 }} pageLock={true} reverseScroll={true} style={{height: "100%", width: "100%"}}>
             
             {images.map((doc, id, index) => {
                     return ( 
@@ -80,7 +82,8 @@ function Potraiture(props) {
                     </a>
                     )
             })}
-        </HorizontalScroll>
+        </HorizontalScroll> }
+             
        
 
             

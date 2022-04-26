@@ -11,6 +11,7 @@
         justify-content: center;
         align-items: center;
         overflow-y: auto;
+        overflow-x: hidden;
         background-color: white;
         transition: all 1s ease-in-out;     
 
@@ -40,15 +41,16 @@
             width: 100%;
 
            div {
+               margin: 0;
+               padding: 0;
             .image-container {
 
-                height: 660px;
                 width: 100%;
                 padding-bottom: 0;
                 margin-top: 1rem;
 
                 .img {
-                    height: 660px;
+                    height: auto;
                     width: 100%;
                     object-fit: cover;
                     object-position: top center;
@@ -69,6 +71,7 @@
             display: flex;
             background-color: white;
             overflow-y: hidden;
+            overflow-x: auto;
             padding-bottom: 0;
             
     
@@ -103,6 +106,9 @@
             }
     
             .image-wrapper {
+                display: flex;
+                justify-content: center;
+                align-items: center;
                 height: 100vh;
                 width: 100vw;
                 overflow-y: hidden;

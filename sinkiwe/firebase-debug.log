@@ -1,44 +1,14 @@
-[debug] [2022-04-19T16:03:35.412Z] ----------------------------------------------------------------------
-[debug] [2022-04-19T16:03:35.414Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\olugb\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js deploy
-[debug] [2022-04-19T16:03:35.414Z] CLI Version:   9.23.3
-[debug] [2022-04-19T16:03:35.414Z] Platform:      win32
-[debug] [2022-04-19T16:03:35.414Z] Node Version:  v14.15.5
-[debug] [2022-04-19T16:03:35.415Z] Time:          Tue Apr 19 2022 17:03:35 GMT+0100 (West Africa Standard Time)
-[debug] [2022-04-19T16:03:35.415Z] ----------------------------------------------------------------------
+[debug] [2022-04-26T09:36:32.798Z] ----------------------------------------------------------------------
+[debug] [2022-04-26T09:36:32.799Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\olugb\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js deploy
+[debug] [2022-04-26T09:36:32.800Z] CLI Version:   9.23.3
+[debug] [2022-04-26T09:36:32.800Z] Platform:      win32
+[debug] [2022-04-26T09:36:32.800Z] Node Version:  v14.15.5
+[debug] [2022-04-26T09:36:32.802Z] Time:          Tue Apr 26 2022 10:36:32 GMT+0100 (West Africa Standard Time)
+[debug] [2022-04-26T09:36:32.803Z] ----------------------------------------------------------------------
 [debug] 
-[debug] [2022-04-19T16:03:35.457Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
-[debug] [2022-04-19T16:03:35.457Z] > authorizing via signed-in user (olugbodidaniel@gmail.com)
-[debug] [2022-04-19T16:03:35.457Z] [iam] checking project sinikiwe for permissions ["datastore.indexes.create","datastore.indexes.delete","datastore.indexes.list","datastore.indexes.update","firebase.projects.get","firebasedatabase.instances.update","firebasehosting.sites.update","firebaserules.releases.create","firebaserules.releases.update","firebaserules.rulesets.create"]
-[debug] [2022-04-19T16:03:35.459Z] >>> HTTP REQUEST POST https://cloudresourcemanager.googleapis.com/v1/projects/sinikiwe:testIamPermissions  
- {"permissions":["datastore.indexes.create","datastore.indexes.delete","datastore.indexes.list","datastore.indexes.update","firebase.projects.get","firebasedatabase.instances.update","firebasehosting.sites.update","firebaserules.releases.create","firebaserules.releases.update","firebaserules.rulesets.create"]}
-[debug] [2022-04-19T16:03:36.754Z] <<< HTTP RESPONSE 200 {"content-type":"application/json; charset=UTF-8","vary":"X-Origin, Referer, Origin,Accept-Encoding","date":"Tue, 19 Apr 2022 16:03:35 GMT","server":"ESF","cache-control":"private","x-xss-protection":"0","x-frame-options":"SAMEORIGIN","x-content-type-options":"nosniff","server-timing":"gfet4t7; dur=209","alt-svc":"h3=\":443\"; ma=2592000,h3-29=\":443\"; ma=2592000,h3-Q050=\":443\"; ma=2592000,h3-Q046=\":443\"; ma=2592000,h3-Q043=\":443\"; ma=2592000,quic=\":443\"; ma=2592000; v=\"46,43\"","accept-ranges":"none","transfer-encoding":"chunked"}
-[debug] [2022-04-19T16:03:36.755Z] > refreshing access token with scopes: []
-[debug] [2022-04-19T16:03:36.755Z] >>> HTTP REQUEST POST https://www.googleapis.com/oauth2/v3/token  
+[debug] [2022-04-26T09:36:32.846Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2022-04-26T09:36:32.846Z] > authorizing via signed-in user (olugbodidaniel@gmail.com)
+[debug] [2022-04-26T09:36:32.846Z] [iam] checking project sinikiwe-1 for permissions ["datastore.indexes.create","datastore.indexes.delete","datastore.indexes.list","datastore.indexes.update","firebase.projects.get","firebasehosting.sites.update","firebaserules.releases.create","firebaserules.releases.update","firebaserules.rulesets.create"]
+[debug] [2022-04-26T09:36:32.848Z] > refreshing access token with scopes: ["email","https://www.googleapis.com/auth/cloud-platform","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","openid"]
+[debug] [2022-04-26T09:36:32.848Z] >>> HTTP REQUEST POST https://www.googleapis.com/oauth2/v3/token  
  <request body omitted>
-[debug] [2022-04-19T16:03:38.143Z] <<< HTTP RESPONSE 200 {"pragma":"no-cache","expires":"Mon, 01 Jan 1990 00:00:00 GMT","cache-control":"no-cache, no-store, max-age=0, must-revalidate","date":"Tue, 19 Apr 2022 16:03:37 GMT","content-type":"application/json; charset=utf-8","vary":"X-Origin, Referer, Origin,Accept-Encoding","server":"scaffolding on HTTPServer2","x-xss-protection":"0","x-frame-options":"SAMEORIGIN","x-content-type-options":"nosniff","alt-svc":"h3=\":443\"; ma=2592000,h3-29=\":443\"; ma=2592000,h3-Q050=\":443\"; ma=2592000,h3-Q046=\":443\"; ma=2592000,h3-Q043=\":443\"; ma=2592000,quic=\":443\"; ma=2592000; v=\"46,43\"","accept-ranges":"none","transfer-encoding":"chunked"}
-[debug] [2022-04-19T16:03:38.153Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/sinikiwe [none]
-[debug] [2022-04-19T16:03:39.383Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/sinikiwe 200
-[debug] [2022-04-19T16:03:39.383Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/sinikiwe {"projectId":"sinikiwe","projectNumber":"32536005557","displayName":"Sinikiwe","name":"projects/sinikiwe","resources":{"hostingSite":"sinikiwe","realtimeDatabaseInstance":"sinikiwe-default-rtdb","storageBucket":"sinikiwe.appspot.com","locationId":"europe-west"},"state":"ACTIVE"}
-[debug] [2022-04-19T16:03:39.384Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/sinikiwe [none]
-[debug] [2022-04-19T16:03:40.783Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/sinikiwe 200
-[debug] [2022-04-19T16:03:40.784Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/sinikiwe {"projectId":"sinikiwe","projectNumber":"32536005557","displayName":"Sinikiwe","name":"projects/sinikiwe","resources":{"hostingSite":"sinikiwe","realtimeDatabaseInstance":"sinikiwe-default-rtdb","storageBucket":"sinikiwe.appspot.com","locationId":"europe-west"},"state":"ACTIVE"}
-[info] 
-[info] === Deploying to 'sinikiwe'...
-[info] 
-[info] i  deploying database, storage, firestore, hosting 
-[info] i  database: checking rules syntax... 
-[debug] [2022-04-19T16:03:40.787Z] > refreshing access token with scopes: ["email","https://www.googleapis.com/auth/cloud-platform","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","openid"]
-[debug] [2022-04-19T16:03:40.787Z] >>> HTTP REQUEST POST https://www.googleapis.com/oauth2/v3/token  
- <request body omitted>
-[debug] [2022-04-19T16:03:42.204Z] <<< HTTP RESPONSE 200 {"cache-control":"no-cache, no-store, max-age=0, must-revalidate","expires":"Mon, 01 Jan 1990 00:00:00 GMT","pragma":"no-cache","date":"Tue, 19 Apr 2022 16:03:41 GMT","content-type":"application/json; charset=utf-8","vary":"X-Origin, Referer, Origin,Accept-Encoding","server":"scaffolding on HTTPServer2","x-xss-protection":"0","x-frame-options":"SAMEORIGIN","x-content-type-options":"nosniff","alt-svc":"h3=\":443\"; ma=2592000,h3-29=\":443\"; ma=2592000,h3-Q050=\":443\"; ma=2592000,h3-Q046=\":443\"; ma=2592000,h3-Q043=\":443\"; ma=2592000,quic=\":443\"; ma=2592000; v=\"46,43\"","accept-ranges":"none","transfer-encoding":"chunked"}
-[debug] [2022-04-19T16:03:42.218Z] >>> HTTP REQUEST GET https://firebasedatabase.googleapis.com/v1beta/projects/sinikiwe/locations/-/instances/sinikiwe-default-rtdb  
- 
-[debug] [2022-04-19T16:03:43.668Z] <<< HTTP RESPONSE 200 {"content-type":"application/json; charset=UTF-8","vary":"X-Origin, Referer, Origin,Accept-Encoding","date":"Tue, 19 Apr 2022 16:03:42 GMT","server":"ESF","cache-control":"private","x-xss-protection":"0","x-frame-options":"SAMEORIGIN","x-content-type-options":"nosniff","alt-svc":"h3=\":443\"; ma=2592000,h3-29=\":443\"; ma=2592000,h3-Q050=\":443\"; ma=2592000,h3-Q046=\":443\"; ma=2592000,h3-Q043=\":443\"; ma=2592000,quic=\":443\"; ma=2592000; v=\"46,43\"","accept-ranges":"none","transfer-encoding":"chunked"}
-[debug] [2022-04-19T16:03:43.670Z] >>> HTTP REQUEST PUT https://sinikiwe-default-rtdb.europe-west1.firebasedatabase.app/.settings/rules.json?dryRun=true  
- {
-  /* Visit https://firebase.google.com/docs/database/security to learn more about security rules. */
-  "rules": {
-    ".read": false,
-    ".write": false
-  }
-}

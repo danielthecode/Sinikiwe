@@ -10,7 +10,7 @@
         flex-direction: column;
         justify-content: center;
         align-items: center;
-        overflow-y: auto;
+        overflow-x: hidden;
         background-color: white;
         transition: all 1s ease-in-out;     
 
@@ -41,11 +41,10 @@
 
             .image-container {
                 margin-top: 1rem;
-                height: 660px;
                 width: 100%;
                 padding-bottom: 0;
                 .img {
-                    height: 660px;
+                    height: auto;
                     width: 100%;
                     object-fit: cover;
                     object-position: top center;
@@ -65,6 +64,7 @@
             display: flex;
             background-color: white;
             padding-bottom: 0;
+            overflow-x: auto;
             
     
             .heading {

@@ -15,10 +15,14 @@ import lgVideo from 'lightgallery/plugins/video';
 import lgThumbnail from "lightgallery/plugins/thumbnail";
 import AOS from "aos";
 import "aos/dist/aos.css";
+import Loader from "../Loader"
+
 
 function Nature() {
 
     const [images, setImages] = useState([])
+    const [isLoading, setLoading] = useState(true)
+
 
     useEffect(() => {
         getPortraiture();
@@ -37,6 +41,7 @@ function Nature() {
                 imagesList.push({...doc.data(), id: doc.id})
                 setImages(imagesList)
             })
+            setTimeout(() => setLoading(false), 4000)
         })
         
     }
@@ -50,15 +55,16 @@ function Nature() {
                 <div className="heading"><div className="text" data-aos="fade-down" data-aos-easing="linear">Nature</div></div>
                 <div className="scroll" data-aos="fade-down" data-aos-easing="linear" data-aos-duration="1000" data-aos-delay="500">scroll →</div>
                 <div className="image-wrapper">
-                <LightGallery plugins={[lgZoom, lgVideo, lgThumbnail]} mode="lg-fade">
+                {isLoading ? <Loader/> : <LightGallery plugins={[lgZoom, lgVideo, lgThumbnail]} mode="lg-fade">
                 {images.map((doc, id) => {
                     return (
-                      <a href={doc.imageURL} data-aos="fade-down" data-aos-easing="linear" data-aos-duration="1000" className="image-container" key={doc.id}>
+                      <a href={doc.imageURL} data-aos="fade-left" data-aos-easing="linear" data-aos-duration="1000" className="image-container" key={doc.id}>
                         <img src={doc.imageURL} className="img" alt="" />
                     </a>  
                     )
                     })}
-                    </LightGallery>
+                    </LightGallery>}
+                
                 </div>
           </div>
       </div>
@@ -70,8 +76,7 @@ function Nature() {
         <div className="heading"><div className="text"><h4 data-aos="fade-down" data-aos-easing="linear" data-aos-duration="1000" data-aos-delay="500">Nature</h4></div></div>
         <div className="scroll" data-aos="fade-down" data-aos-easing="linear" data-aos-duration="1000" data-aos-delay="500">scroll →</div>
         <div className="image-wrapper">
-
-             <HorizontalScroll config={{ stiffness: 137, damping: 14 }} pageLock={true} reverseScroll={true} style={{height: "100%", width: "100%"}}>
+        {isLoading ? <Loader/> : <HorizontalScroll config={{ stiffness: 137, damping: 14 }} pageLock={true} reverseScroll={true} style={{height: "100%", width: "100%"}}>
              <LightGallery plugins={[lgZoom, lgVideo, lgThumbnail]} mode="lg-fade">
              {images.map((doc, id) => {
                     return (
@@ -81,7 +86,8 @@ function Nature() {
                     )
                     })}
             </LightGallery>
-        </HorizontalScroll>
+        </HorizontalScroll>}
+             
        
 
             

@@ -8,6 +8,8 @@ import { collection, query, orderBy } from "firebase/firestore";
 import {  db } from '../../firebase'
 import AOS from "aos";
 import "aos/dist/aos.css";
+import Loader from "../Loader"
+
 
 const options = {
   thumbnails: {
@@ -18,6 +20,8 @@ const options = {
 function FineArt() {
 
   const [images, setImages] = useState([])
+  const [isLoading, setLoading] = useState(true)
+
 
     useEffect(() => {
         getPortraiture();
@@ -37,7 +41,8 @@ function FineArt() {
                 imagesList.push({...doc.data(), id: doc.id})
                 setImages(imagesList)
             })
-            console.log(imagesList);
+            setTimeout(() => setLoading(false), 4000)
+            
         })
         
     }
@@ -49,10 +54,10 @@ function FineArt() {
 <MobileView>
         <div className="portraiture">
             <div className="container">
-                <div className="heading"><div className="text" data-aos="fade-down" data-aos-easing="linear">FineArt</div></div>
+                <div className="heading"><div className="text" data-aos="fade-down" data-aos-easing="linear">Fine Art</div></div>
                 <div className="scroll">scroll →</div>
                 <div className="image-wrapper">
-                {images.map((doc, id) => {
+                {isLoading ? <Loader/> : images.map((doc, id) => {
                     return (
                       <div className="image-container" data-aos="fade-left" data-aos-easing="linear" data-aos-duration="1000" key={doc.id}>
                         <img src={doc.imageURL} className="img" alt="" />
@@ -67,20 +72,20 @@ function FineArt() {
     <BrowserView>
 <div className="portraiture">
     <div className="container">
-        <div className="heading"><div className="text"><h4 data-aos="fade-left" data-aos-easing="linear" data-aos-duration="1000" data-aos-delay="500">Fine Art</h4></div></div>
+        <div className="heading"><div className="text"><h4 data-aos="fade-down" data-aos-easing="linear" data-aos-duration="1000" data-aos-delay="500">Fine Art</h4></div></div>
         <div className="scroll" data-aos="fade-left" data-aos-easing="linear" data-aos-duration="1000" data-aos-delay="500">scroll →</div>
         <div className="image-wrapper">
 
-             <HorizontalScroll config={{ stiffness: 137, damping: 14 }} pageLock={true} reverseScroll={true} style={{height: "100%", width: "100%"}}>
+        {isLoading ? <Loader/> : <HorizontalScroll config={{ stiffness: 137, damping: 14 }} pageLock={true} reverseScroll={true} style={{height: "100%", width: "100%"}}>
             
-            {images.map((doc, id) => {
+            {images.map((doc, id, index) => {
                     return ( 
-                    <a href={doc.imageURL} className="image-container" data-aos="fade-down" data-aos-easing="linear" data-aos-duration="1100" data-aos-delay="1100" key={doc.id}>
+                    <a href={doc.imageURL} data-aos="fade-down" data-aos-easing="linear" data-aos-duration="1000" data-aos-delay="1100" className="image-container" key={doc.id}>
                     <img src={doc.imageURL} className="img" alt="" />
                     </a>
                     )
             })}
-        </HorizontalScroll>
+        </HorizontalScroll> }
        
 
             
