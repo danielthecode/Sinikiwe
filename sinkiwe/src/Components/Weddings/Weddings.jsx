@@ -1,5 +1,3 @@
-/* eslint-disable no-unused-vars */
-/* eslint-disable no-undef */
 import React, {useState, useEffect} from 'react'
 import HorizontalScroll from 'react-scroll-horizontal'
 import { BrowserView, MobileView } from 'react-device-detect';
@@ -31,7 +29,7 @@ function Weddings(props) {
 
     const getPortraiture = async() => {
         
-        const data = await ImageService.getAllImages(query(collection(db, "wedding"),orderBy("timeStamp", "desc")), (snapshot) => {
+        await ImageService.getAllImages(query(collection(db, "wedding"),orderBy("timeStamp", "desc")), (snapshot) => {
             let imagesList = []
             snapshot.docs.forEach((doc) => {
                 imagesList.push({...doc.data(), id: doc.id})
