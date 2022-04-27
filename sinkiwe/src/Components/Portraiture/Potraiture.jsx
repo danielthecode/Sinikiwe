@@ -69,8 +69,8 @@ function Potraiture(props) {
     <BrowserView>
 <div className="portraiture">
     <div className="container">
-        <div className="heading"><div className="text"><h4 data-aos="fade-down" data-aos-easing="linear" data-aos-duration="1000" data-aos-delay="500" >Portaiture</h4></div></div>
-        <div className="scroll" data-aos="fade-right" data-aos-easing="linear" data-aos-duration="1000"  data-aos-delay="500">scroll →</div>
+        <div className="heading"><div className="text"><h4 data-aos="fade-down" data-aos-easing="ease-in-sine" data-aos-duration="1000" >Portaiture</h4></div></div>
+        <div className="scroll" data-aos="fade-right" data-aos-easing="ease-in-sine" data-aos-duration="1000"  data-aos-delay="1500">scroll →</div>
         <div className="image-wrapper">
 
         {isLoading ? <Loader/> : <HorizontalScroll config={{ stiffness: 137, damping: 14 }} pageLock={true} reverseScroll={true} style={{height: "100%", width: "100%"}}>
