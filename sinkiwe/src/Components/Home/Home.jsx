@@ -4,9 +4,24 @@ import Image from "../../Images/Hero_image.png";
 import AOS from "aos";
 import "aos/dist/aos.css";
 import Loader from "../Loader"
+import DocumentMeta from "react-document-meta";
+import MetaTags from 'react-meta-tags';
 
 
 function Home() {
+
+
+  const meta = {
+    title: "Sinikiwe - Photographer | Home",
+
+    description: "Fast and Reliable Mobile Service, Experienced Technician and Competitive Prices set us apart as the go to for all you car key services",
+    meta: {
+      charset: "utf-8",
+      name: {
+        keywords: "car key, car key experts, carkeyexperts, vehicle lockout, car key programming, lost car key, stolen car key, car key cutting, car key repair"
+      }
+    }
+  };
 
   const [isLoading, setLoading] = useState(true)
 
@@ -24,9 +39,18 @@ function Home() {
     
   };
   
+  
 
   return (
     <div className="home">
+      <MetaTags>
+            <title>Sinikiwe | Home</title>
+            <meta name="description" content="Portraiture. Nature. Wedding. Fine Art" />
+            <meta property="og:title" content="Sinikiew" />
+            <meta property="og:image" content="path/to/image.jpg" />
+            <meta charset= "utf-8" />
+            <meta name="keywords" content="Photographer, Photos, Images, Capture, Weddings, Portraiture, Nature, "/>
+          </MetaTags>
       {isLoading ? <Loader/> : <div className='container'>
             <div className='hero-image'><img src={Image} className="img" alt="" /></div>
             <div className="heading">
