@@ -65,7 +65,7 @@ function Header() {
              <a href="https://www.instagram.com/ashleemlambo/" target="_blank" rel="noreferrer"><FaInstagram size={30}/></a>
             </div>
             <div className="icon">
-            <a href="https://www.facebook.com/Car-Keys-Remotes-UK-100636342171376/" target="_blank" rel="noreferrer"><FaFacebook size={30}/></a>
+            <a href="https://web.facebook.com/profile.php?id=100010456119262" target="_blank" rel="noreferrer"><FaFacebook size={30}/></a>
             </div>
           </div>
         </div>
