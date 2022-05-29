@@ -1,188 +1,169 @@
 .nature {
-    .container{
+  .container {
+    min-height: 100vh;
+    width: 100%;
+    margin-top: 100px;
+    padding-bottom: 5rem;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    overflow-y: auto;
+    overflow-x: hidden;
+    background-color: white;
+    transition: all 1s ease-in-out;
 
-        min-height: 100vh;
-        width: 100%;
-        margin-top: 100px;
-        padding-bottom: 5rem;
-        position: relative;
+    .heading {
+      position: relative;
+      margin: 0 5px;
+      font-size: clamp(5rem, 10vw, 14vw);
+      color: white;
+      mix-blend-mode: difference;
+    }
+
+    .scroll {
+      position: absolute;
+      bottom: 10%;
+      left: 18%;
+      font-size: clamp(2rem, 4rem, 8rem);
+      line-height: 1;
+      display: none;
+      color: white;
+      mix-blend-mode: difference;
+    }
+
+    .image-wrapper {
+      height: 100%;
+      width: 100%;
+
+      div {
+        margin: 0;
+        padding: 0;
+        .image-container {
+          width: 100%;
+          padding-bottom: 0;
+          margin-top: 1rem;
+
+          .img {
+            height: auto;
+            width: 100%;
+            object-fit: cover;
+            object-position: top center;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  .nature {
+    .container {
+      height: 100vh;
+      margin-top: 0;
+      display: flex;
+      background-color: white;
+      overflow-y: hidden;
+      overflow-x: auto;
+      padding-bottom: 0;
+
+      .heading {
+        position: absolute;
+        transform-origin: top left;
+        font-size: clamp(5rem, 8rem, 12rem);
+        transform: rotate(-90deg) translateX(-50%);
+        left: 0;
+        top: 50%;
+        font-weight: 500;
+        text-align: right;
+        margin: 0;
+        z-index: 4;
+        text-transform: uppercase;
+        background-color: white;
+        mix-blend-mode: difference;
+
+        .text {
+          background-color: white;
+          color: black;
+          mix-blend-mode: difference;
+          width: 100vh;
+          line-height: 1;
+        }
+      }
+
+      .scroll {
+        display: initial;
+      }
+
+      .image-wrapper {
         display: flex;
-        flex-direction: column;
         justify-content: center;
         align-items: center;
-        overflow-y: auto;
-        overflow-x: hidden;
-        background-color: white;
-        transition: all 1s ease-in-out;     
+        height: 100vh;
+        width: 100vw;
+        overflow-y: hidden;
 
-        .heading {
-            position: relative;
-            margin:0 5px;
-            font-size: clamp(5rem, 10vw, 14vw);
-            color: white;
-            mix-blend-mode: difference;
-        }
+        div {
+          display: flex;
+          height: 100vh;
+          overflow-y: hidden;
+          margin: 0 0;
 
-        .scroll {
-            position: absolute;
-            bottom: 10%;
-            left: 18%;
-            font-size: clamp(2rem, 4rem, 8rem);
-            line-height: 1;
-            display: none;
-            color: white;
-            mix-blend-mode: difference;
-            
+          :not(:first-child) {
+            margin: 0 0;
+          }
 
-        }
+          :first-child {
+            margin: 0;
+          }
 
-        .image-wrapper {
-            height: 100%;
-            width: 100%;
+          & > :first-child.image-container {
+            margin-left: 400px;
+          }
 
-           div {
-               margin: 0;
-               padding: 0;
-            .image-container {
-
-                width: 100%;
-                padding-bottom: 0;
-                margin-top: 1rem;
-
-                .img {
-                    height: auto;
-                    width: 100%;
-                    object-fit: cover;
-                    object-position: top center;
-                }
+          div {
+            & > :first-child {
+              margin-left: 200px;
+              margin: 0 0;
             }
-           } 
+          }
+          .image-container {
+            height: unset;
+            width: unset;
+            .img {
+              width: auto;
+              height: 100vh;
+              margin: 0;
+              margin-top: 0;
+              margin-right: 2rem;
+
+              cursor: pointer;
+            }
+          }
         }
+      }
     }
+  }
 }
 
+@media only screen and (min-width: 1024px) {
+  .nature {
+    .container {
+      .heading {
+        font-size: 5.8rem;
+        left: 0;
+      }
 
-@media only screen and (min-width : 768px) {
-    .nature {
-        .container{
-    
-            height: 100vh;
-            margin-top: 0;
-            display: flex;
-            background-color: white;
-            overflow-y: hidden;
-            overflow-x: auto;
-            padding-bottom: 0;
-            
-    
-            .heading {
-                position: absolute;
-                transform-origin: top left;
-                font-size: clamp(5rem, 8rem, 12rem);
-                transform: rotate(-90deg) translateX(-50%);
-                left: 0;
-                top: 50%;
-                font-weight: 500;
-                text-align: right;
-                margin:0;
-                z-index: 4;
-                text-transform: uppercase;
-                background-color: white;
-                mix-blend-mode: difference;
-        
-                .text {
-                    background-color: white;
-                    color: black;
-                    mix-blend-mode: difference;
-                    width: 100vh;
-                    line-height: 1;
-                }
+      .image-wrapper {
+        div {
+          div {
+            & > :first-child {
+              margin-left: 450px;
             }
-
-            .scroll {
-                display: initial;
-                
-
-            }
-    
-            .image-wrapper {
-                display: flex;
-                justify-content: center;
-                align-items: center;
-                height: 100vh;
-                width: 100vw;
-                overflow-y: hidden;
-                z-index: 3;
-                
-               
-
-                div {
-                    display: flex;
-                    height: 100vh;
-                    overflow-y: hidden;
-                    margin: 0 0;
-
-                    :not(:first-child){
-                        margin: 0 0;
-                    }
-                    
-
-                    div{
-                        &>:first-child {
-                        margin-left: 200px;
-                        margin: 0 0;
-                    }
-                    }
-                    .image-container {
-                        height: unset;
-                        width: unset;
-                        .img {
-                        width: auto ;
-                        height: 100vh;
-                        margin: 0;
-                        margin-top: 0;
-                        margin-right: 2rem;
-
-                        
-                        
-                        cursor: pointer;
-
-                }
-                }
-                }
-    
-                
-            }
+          }
         }
+      }
     }
+  }
 }
-
-
-
-
-
-
- @media only screen and (min-width : 1024px) {
-    .nature {
-        .container{
-            .heading {
-                font-size: 5.8rem;
-                left: 0;
-            }
-    
-            .image-wrapper {
-                div {
-
-                    div{
-                       &>:first-child {
-                        margin-left: 450px;
-                    } 
-                    }
-                }
-            }
-        }
-    }
-}
-
-
-

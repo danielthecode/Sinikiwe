@@ -1,61 +1,65 @@
-
-import { storage } from '../firebase'
-import { getDocs, onSnapshot, addDoc, updateDoc, getDoc, deleteDoc, doc, serverTimestamp, query, where, orderBy } from "firebase/firestore"
+import { storage } from "../firebase";
 import {
-    deleteObject,
-    ref
-  } from "firebase/storage";
-
+  onSnapshot,
+  addDoc,
+  updateDoc,
+  getDoc,
+  deleteDoc,
+  doc,
+  serverTimestamp,
+} from "firebase/firestore";
+import { deleteObject, ref } from "firebase/storage";
 
 class ImageService {
+  addImage = (collection, newPortraiture) => {
+    return addDoc(collection, {
+      imageURL: newPortraiture,
+      timeStamp: serverTimestamp(),
+    });
+  };
 
-    addImage = (collection, newPortraiture) => {
-        return addDoc(collection, {
-            imageURL: newPortraiture,
-            timeStamp: serverTimestamp()
-        })
-    }
+  updateImage = (id, collection, updatedImage) => {
+    const portraitureDoc = doc(
+      // db, "portraiture"
+      collection,
+      id
+    );
 
-    updateImage = (id, collection, updatedImage) => {
-        const portraitureDoc = doc(
-            // db, "portraiture"
-            collection, 
-            id )
+    return updateDoc(portraitureDoc, updateDoc);
+  };
 
-        return updateDoc(portraitureDoc, updateDoc)
-    }
+  deleteImage = (id, collection, url) => {
+    const portraitureDoc = doc(
+      // db, "portraiture"
+      collection,
+      id
+    );
 
-    deleteImage = (id, collection, url) => {
-        const portraitureDoc = doc(
-            // db, "portraiture"
-            collection, 
-            id )
+    let pictureRef = ref(storage, url);
+    deleteObject(pictureRef)
+      .then(() => {
+        console.log("File deleted");
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+    return deleteDoc(portraitureDoc);
+  };
 
-            let pictureRef = ref(storage,url)
-            deleteObject(pictureRef)
-            .then(() => {
-                console.log("File deleted");
-            })
-            .catch((err) => {
-                console.log(err);
-            })
-        return deleteDoc(portraitureDoc)
-    }
+  getAllImages = (collection, snapshot) => {
+    return onSnapshot(collection, snapshot);
 
-    getAllImages = (collection, snapshot) => {
-        
-        return onSnapshot(collection, snapshot)
+    // return getDocs(collection)
+  };
 
-        // return getDocs(collection)
-    }
-
-    getImage = (id, collection) => {
-        const portraitureDoc = doc(
-            // db, "portraiture"
-            collection, 
-            id )
-        return getDoc(portraitureDoc)
-    }
+  getImage = (id, collection) => {
+    const portraitureDoc = doc(
+      // db, "portraiture"
+      collection,
+      id
+    );
+    return getDoc(portraitureDoc);
+  };
 }
 
-export default new ImageService()
+export default new ImageService();
