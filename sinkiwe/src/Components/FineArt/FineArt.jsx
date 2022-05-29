@@ -1,7 +1,6 @@
 /* eslint-disable no-undef */
 import React, { useState, useEffect } from "react";
 import HorizontalScroll from "react-scroll-horizontal";
-import { BrowserView, MobileView } from "react-device-detect";
 import { SRLWrapper } from "simple-react-lightbox";
 import ImageService from "../../utils/ImageService";
 import { collection, query, orderBy } from "firebase/firestore";

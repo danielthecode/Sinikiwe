@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React from "react";
 import "./upload.scss";
 import ImageUploading from "react-images-uploading";
 import { VscFolderOpened } from "react-icons/vsc";
@@ -6,16 +6,14 @@ import { FaTimes } from "react-icons/fa";
 import { AiOutlineSend } from "react-icons/ai";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-import { auth, storage, db } from "././../../../../firebase";
-import { signOut } from "firebase/auth";
+import { storage, db } from "././../../../../firebase";
 import { ref, uploadBytesResumable, getDownloadURL } from "firebase/storage";
 import { collection } from "firebase/firestore";
 import { v4 } from "uuid";
 import ImageService from "../../../../utils/ImageService";
 import { CircularProgressbar, buildStyles } from "react-circular-progressbar";
 import "react-circular-progressbar/dist/styles.css";
-import { useNavigate } from "react-router-dom";
-import { AuthContext } from "../../../../contexts/AuthContext";
+import SideNav from "../../SideNav/SideNav";
 
 function UploadPortraiture() {
   const [images, setImages] = React.useState([]);
@@ -27,10 +25,6 @@ function UploadPortraiture() {
     setImages(imageList);
     setProgress(0);
   };
-
-  const navigate = useNavigate();
-
-  const { dispatch } = useContext(AuthContext);
 
   function UploadImage() {
     let newImage = [];
@@ -71,99 +65,92 @@ function UploadPortraiture() {
     });
   }
 
-  const handleLogout = (e) => {
-    e.preventDefault();
-
-    signOut(auth);
-    dispatch({ type: "LOGOUT", payload: null });
-    navigate("/admin/login");
-  };
-
   return (
-    <div className="upload-container">
-      <div className="title">
-        Upload Portraiture Image <button onClick={handleLogout}>Logout</button>
-      </div>
-      <div className="conatiner">
-        <ImageUploading
-          multiple
-          value={images}
-          onChange={onChange}
-          maxNumber={maxNumber}
-          dataURLKey="data_url"
-        >
-          {({
-            imageList,
-            onImageUpload,
-            onImageRemoveAll,
-            onImageUpdate,
-            onImageRemove,
-            isDragging,
-            dragProps,
-          }) => (
-            // write your building UI
-            <div className="upload__image-wrapper">
-              <div className="controls">
-                <div
-                  className="select-button"
-                  style={isDragging ? { color: "red" } : undefined}
-                  onClick={onImageUpload}
-                  {...dragProps}
-                >
-                  <div className="icon">
-                    <VscFolderOpened />
-                  </div>
-                  Click or Drop here
-                </div>
-                <div className="remove-button" onClick={onImageRemoveAll}>
-                  <div className="icon">
-                    <FaTimes />
-                  </div>
-                  Remove all images
-                </div>
-                <div className="upload-button" onClick={UploadImage}>
-                  <div className="icon">
-                    <AiOutlineSend />
-                  </div>
-                  Upload-Images
-                </div>
-              </div>
-
-              <div className="image-container">
-                {imageList.map((image, index) => (
-                  <div key={index} className="image-item">
-                    <img src={image["data_url"]} alt="" width="100" />
-                    <div className="image-item__btn-wrapper">
-                      <button
-                        className="update-btn"
-                        onClick={() => onImageUpdate(index)}
-                      >
-                        Update
-                      </button>
-                      <button
-                        className="remove-btn"
-                        onClick={() => onImageRemove(index)}
-                      >
-                        Remove
-                      </button>
+    <>
+      <SideNav />
+      <div className="upload-container">
+        <div className="title">Upload Portraiture Image</div>
+        <div className="conatiner">
+          <ImageUploading
+            multiple
+            value={images}
+            onChange={onChange}
+            maxNumber={maxNumber}
+            dataURLKey="data_url"
+          >
+            {({
+              imageList,
+              onImageUpload,
+              onImageRemoveAll,
+              onImageUpdate,
+              onImageRemove,
+              isDragging,
+              dragProps,
+            }) => (
+              // write your building UI
+              <div className="upload__image-wrapper">
+                <div className="controls">
+                  <div
+                    className="select-button"
+                    style={isDragging ? { color: "red" } : undefined}
+                    onClick={onImageUpload}
+                    {...dragProps}
+                  >
+                    <div className="icon">
+                      <VscFolderOpened />
                     </div>
+                    Click or Drop here
                   </div>
-                ))}
-              </div>
+                  <div className="remove-button" onClick={onImageRemoveAll}>
+                    <div className="icon">
+                      <FaTimes />
+                    </div>
+                    Remove all images
+                  </div>
+                  <div className="upload-button" onClick={UploadImage}>
+                    <div className="icon">
+                      <AiOutlineSend />
+                    </div>
+                    Upload-Images
+                  </div>
+                </div>
 
-              <div className="progress">
-                <CircularProgressbar
-                  value={progressP}
-                  text={`${progressP}`}
-                  styles={buildStyles({ textSize: "12px" })}
-                />
+                <div className="image-container">
+                  {imageList.map((image, index) => (
+                    <div key={index} className="image-item">
+                      <img src={image["data_url"]} alt="" width="100" />
+                      <div className="image-item__btn-wrapper">
+                        <button
+                          className="update-btn"
+                          onClick={() => onImageUpdate(index)}
+                        >
+                          Update
+                        </button>
+                        <button
+                          className="remove-btn"
+                          onClick={() => onImageRemove(index)}
+                        >
+                          Remove
+                        </button>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+
+                <div className="progress">
+                  <CircularProgressbar
+                    value={progressP}
+                    text={`${progressP}`}
+                    styles={buildStyles({ textSize: "12px" })}
+                  />
+                </div>
               </div>
-            </div>
-          )}
-        </ImageUploading>
+            )}
+          </ImageUploading>
+        </div>
+        <ToastContainer />
       </div>
-      <ToastContainer />
-    </div>
+    </>
   );
 }
 

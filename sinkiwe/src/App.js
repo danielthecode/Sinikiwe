@@ -7,7 +7,6 @@ import {
   Navigate,
 } from "react-router-dom";
 import Home from "./Components/Home/Home";
-import Header from "./Components/Header/Header";
 import Potraiture from "./Components/Portraiture/Potraiture";
 import Nature from "./Components/Nature/Nature";
 import Weddings from "./Components/Weddings/Weddings";
@@ -35,7 +34,7 @@ function App() {
   };
 
   const LoggedIn = ({ children }) => {
-    return currentUser ? <Navigate to="/admin/portraiture-upload" /> : children;
+    return currentUser ? <Navigate to="/admin/dashboard" /> : children;
   };
 
   console.log(currentUser);

@@ -33,7 +33,7 @@ function Login() {
         //Signed in
         const user = userCredential.user;
         dispatch({ type: "LOGIN", payload: user });
-        navigate("/admin/portraiture-upload");
+        navigate("/admin/dashboard");
       })
       .catch((error) => {
         setError(true);

@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from "react";
 import "./nature.scss";
 import HorizontalScroll from "react-scroll-horizontal";
-import { BrowserView, MobileView } from "react-device-detect";
 import ImageService from "../../utils/ImageService";
 import { collection, query, orderBy } from "firebase/firestore";
 import { db } from "../../firebase";
@@ -9,10 +8,6 @@ import { db } from "../../firebase";
 import "lightgallery/css/lightgallery.css";
 import "lightgallery/css/lg-zoom.css";
 import "lightgallery/css/lg-thumbnail.css";
-import LightGallery from "lightgallery/react";
-import lgZoom from "lightgallery/plugins/zoom";
-import lgVideo from "lightgallery/plugins/video";
-import lgThumbnail from "lightgallery/plugins/thumbnail";
 import AOS from "aos";
 import "aos/dist/aos.css";
 import Loader from "../Loader";

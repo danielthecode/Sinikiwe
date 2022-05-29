@@ -1,35 +1,103 @@
-.sidenav {
-  height: 100%;
-  width: 0;
-  position: fixed;
-  z-index: 1;
-  top: 0;
-  left: 0;
-  background-color: #111;
-  overflow-x: hidden;
-  transition: 0.5s;
-  padding-top: 60px;
-}
+.nav {
+  .sidenav {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: #111;
+    overflow-x: hidden;
+    transition: 0.2s ease-in;
+    padding-top: 60px;
 
-.sidenav a {
-  padding: 8px 8px 8px 32px;
-  text-decoration: none;
-  font-size: 25px;
-  color: #818181;
-  display: block;
-  transition: 0.3s;
-}
+    a {
+      text-decoration: none;
+      font-size: 1.4rem;
+      color: #818181;
+      display: block;
+      transition: 0.3s ease-in;
 
-.sidenav a:hover {
-  color: #f1f1f1;
-}
+      &:hover {
+        color: #f1f1f1;
+      }
+    }
 
-.sidenav .closebtn {
-  position: absolute;
-  top: 0;
-  right: 25px;
-  font-size: 36px;
-  margin-left: 50px;
+    .nav-item {
+      padding: 8px 8px 8px 32px;
+      margin-top: 1.5rem;
+
+      .group {
+        color: white;
+      }
+    }
+
+    .closebtn {
+      position: absolute;
+      top: 0;
+      right: 25px;
+      font-size: 36px;
+      margin-left: 50px;
+    }
+  }
+
+  button {
+    background-color: #111; /* Green */
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    width: 10px;
+    display: flex;
+    justify-content: center;
+
+    h3 {
+      cursor: pointer;
+    }
+  }
+
+  .navhead {
+    position: relative;
+    top: 0;
+    display: flex;
+    align-items: center;
+
+    word-wrap: break-word;
+    justify-content: flex-end;
+
+    .logout {
+      justify-self: flex-end;
+      position: absolute;
+      top: 0;
+      margin: 2rem;
+      right: 2rem;
+      display: flex;
+
+      button {
+        background-color: #111;
+        color: white;
+        mix-blend-mode: difference;
+        cursor: pointer;
+      }
+    }
+
+    .openbtn {
+      position: absolute;
+      left: 0;
+      top: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 2rem;
+
+      span {
+        font-size: 30px;
+        cursor: pointer;
+      }
+    }
+  }
 }
 
 @media screen and (max-height: 450px) {
