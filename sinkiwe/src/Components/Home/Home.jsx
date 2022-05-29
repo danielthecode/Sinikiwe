@@ -5,6 +5,7 @@ import AOS from "aos";
 import "aos/dist/aos.css";
 import Loader from "../Loader";
 import Header from "../Header/Header";
+import { FaFacebook, FaInstagram } from "react-icons/fa";
 
 function Home() {
   const [isLoading, setLoading] = useState(true);
@@ -54,6 +55,34 @@ function Home() {
             </div>
           </div>
         )}
+
+        <div className="contact">
+          <div className="email">
+            <a href="mailto:contact@carkeyexperts.co.uk">
+              ashleemlambo@gmail.com
+            </a>
+          </div>
+          <div className="socials">
+            <div className="icon">
+              <a
+                href="https://www.instagram.com/ashleemlambo/"
+                target="_blank"
+                rel="noreferrer"
+              >
+                <FaInstagram size={30} />
+              </a>
+            </div>
+            <div className="icon">
+              <a
+                href="https://web.facebook.com/profile.php?id=100010456119262"
+                target="_blank"
+                rel="noreferrer"
+              >
+                <FaFacebook size={30} />
+              </a>
+            </div>
+          </div>
+        </div>
       </div>
     </>
   );

@@ -50,6 +50,48 @@
       }
     }
   }
+
+  .contact {
+    position: absolute;
+    width: 100%;
+    bottom: 4%;
+    padding: auto 10px;
+    text-align: center;
+    transition: 1s all ease;
+    font-size: clamp(1.5rem, 3vw, 6vw);
+
+    .email {
+      a {
+        color: white;
+        mix-blend-mode: difference;
+        text-decoration: none;
+      }
+    }
+
+    .socials {
+      margin: auto 30px;
+      display: flex;
+      flex-direction: row;
+      transition: 1s all ease;
+      align-items: center;
+      justify-content: center;
+
+      .icon {
+        &:first-child {
+          margin-right: 8px;
+        }
+
+        a {
+          color: white;
+          text-decoration: none;
+          svg {
+            height: clamp(1.25rem, 4vw, 2rem);
+            width: clamp(1.25rem, 4vw, 2rem);
+          }
+        }
+      }
+    }
+  }
 }
 
 @media only screen and (min-width: 768px) {
@@ -63,6 +105,15 @@
         margin-left: 63px;
       }
     }
+  }
+
+  .contact {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    bottom: 5%;
+    font-size: clamp(1.4rem, 3vw, 6vw);
   }
 }
 

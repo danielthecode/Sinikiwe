@@ -1,72 +1,59 @@
-.image-container{
+.image-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  margin: 0;
+  margin-top: 10rem;
+  padding-bottom: 10rem;
 
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-    margin: 0;
-    margin-top: 10rem;
-    padding-bottom: 10rem;
+  .title {
+    font-size: 2rem;
+    margin-bottom: 3rem;
+    text-align: center;
+  }
 
+  .image-wrapper {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    gap: 1rem;
+    height: 100%;
+    padding: 0 0;
+
+    .content {
+      .image {
+        img {
+          height: 50%;
+          width: 100%;
+          object-fit: cover;
+          object-position: top center;
+        }
+      }
+    }
+  }
+}
+
+@media only screen and (min-width: 767px) {
+  .image-container {
     .title {
-        font-size: 2rem;
-        margin-bottom: 3rem;
+      font-size: 2rem;
     }
 
     .image-wrapper {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
-        gap: 1rem;
-        height: 100%;
-        padding: 0 0;
+      width: 95vw;
+      padding: 0 2rem;
 
-
-        .content {
-            .image {
-
-                img {
-                height: 50%;
-                width: 100%;
-                object-fit: cover;
-                object-position: top center;
-                }
-                
-            }
-
-
+      .content {
+        height: 430px;
+        .image {
+          img {
+            height: 400px;
+            width: 100%;
+            object-fit: cover;
+            object-position: center;
+          }
         }
+      }
     }
-}
-
-@media only screen and (min-width : 767px) {
-
-    .image-container{
-    
-        .title {
-            font-size: 2rem;
-        }
-    
-        .image-wrapper {
-            width: 95vw;
-            padding: 0 2rem;
-
-            .content {
-                height: 430px;
-                .image {
-    
-                    img {
-                    height: 400px;
-                    width: 100%;
-                    object-fit: cover;
-                    object-position:center;
-                    }
-                    
-                }
-    
-    
-            }
-    
-        }
-    }
-    
+  }
 }
